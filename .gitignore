@@ -1,0 +1,14 @@
+*.zip
+detectron2
+log
+tmp
+lasr_vcn
+Manifold
+soft_renderer.egg-info/
+__pycache__/
+*.pyc
+.nfs*
+lasr/
+DAVIS-2017-trainval-Full-Resolution/
+camel/
+database/
