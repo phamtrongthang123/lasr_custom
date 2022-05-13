@@ -60,7 +60,9 @@ class BADJAData():
                 for image_annotation in animal_joint_data:
                     file_name = os.path.join(BADJA_PATH, image_annotation['image_path'])
                     seg_name = os.path.join(BADJA_PATH, image_annotation['segmentation_path'])
-
+                    # if seg_name == "./database/DAVIS/Annotations/Full-Resolution/horsejump-high/00007.png":
+                    #     print(seg_name)
+                    #     continue
                     if os.path.exists(file_name) and os.path.exists(seg_name):
                         filenames.append(file_name)
                         segnames.append(seg_name)
@@ -94,7 +96,9 @@ class BADJAData():
                 visibletmp = visible[image_id][self.smal_joint_info.annotated_classes]
 
                 rgb_img = cv2.imread(image_file)[:,:,::-1]
-                sil_img = imageio.imread(seg_file)
+                # print(seg_file)
+                # sil_img = imageio.imread(seg_file)
+                sil_img = cv2.imread(seg_file, cv2.IMREAD_UNCHANGED)[:,:,::-1]
 
                 rgb_h, rgb_w, _ = rgb_img.shape
                 sil_img = cv2.resize(sil_img, (rgb_w, rgb_h), cv2.INTER_NEAREST)

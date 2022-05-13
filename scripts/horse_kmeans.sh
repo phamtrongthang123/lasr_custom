@@ -12,14 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-dev=0,1
-ngpu=2
+dev=0
+ngpu=1
 seqname=$1
 logname=$1
 checkpoint_dir=log/
 nepoch=10
 sil_path=none
-address=1257
+address=125722
 batchsize=2
 
 dataname=r${seqname}

@@ -25,7 +25,7 @@ import cv2
 import kornia
 import torch
 
-from nnutils.train_utils import LASRTrainer
+from nnutils.train_utils_old import LASRTrainer
 
 import torch.backends.cudnn as cudnn
 cudnn.benchmark = True
