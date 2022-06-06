@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-dev=0
+dev=2
 ngpu=1
 logname=spot3
 checkpoint_dir=log/

@@ -14,7 +14,7 @@
 eval "$(command conda 'shell.bash' 'hook' 2> /dev/null)"
 # conda env create -f lasr.yml --prefix lasr/
 conda activate lasr/
-dev=0
+dev=2
 modelname=$1
 epoch=$2
 fr=$3
