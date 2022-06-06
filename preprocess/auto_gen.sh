@@ -25,10 +25,10 @@ newname=r${seqname}
 # run flow on frames with sufficient motion
 python preprocess/auto_gen.py --datapath $davisdir/JPEGImages/$res/$seqname/ --loadmodel ./lasr_vcn/vcn_rob.pth  --testres 1
 
-mkdir $davisdir/JPEGImages/$res/$newname
-mkdir $davisdir/Annotations/$res/$newname
-mkdir $davisdir/FlowFW/$res/$newname
-mkdir $davisdir/FlowBW/$res/$newname
+mkdir -p $davisdir/JPEGImages/$res/$newname
+mkdir -p $davisdir/Annotations/$res/$newname
+mkdir -p $davisdir/FlowFW/$res/$newname
+mkdir -p $davisdir/FlowBW/$res/$newname
 cp $seqname/JPEGImages/*   -rf $davisdir/JPEGImages/$res/$newname
 cp $seqname/Annotations/* -rf $davisdir/Annotations/$res/$newname
 cp $seqname/FlowFW/*           -rf $davisdir/FlowFW/$res/$newname
@@ -37,8 +37,8 @@ cp $seqname/FlowBW/*           -rf $davisdir/FlowBW/$res/$newname
 
 # run flow on the full seq
 python preprocess/auto_gen.py --datapath $davisdir/JPEGImages/$res/$seqname/ --loadmodel ./lasr_vcn/vcn_rob.pth  --testres 1 --flow_threshold 0
-mkdir $davisdir/FlowFW/$res/$seqname
-mkdir $davisdir/FlowBW/$res/$seqname
+mkdir -p $davisdir/FlowFW/$res/$seqname
+mkdir -p $davisdir/FlowBW/$res/$seqname
 cp $seqname/FlowFW/*           -rf $davisdir/FlowFW/$res/$seqname
 cp $seqname/FlowBW/*           -rf $davisdir/FlowBW/$res/$seqname
 #rm ./$seqname -rf
